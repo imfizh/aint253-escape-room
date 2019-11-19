@@ -11,7 +11,9 @@ public class Fade_in : MonoBehaviour
     {
         BlackImage.canvasRenderer.SetAlpha(1.0f);
         fadeIn();
-        Anims();
+        StartCoroutine(wait());
+        
+        
     }
 
     void fadeIn()
@@ -23,5 +25,10 @@ public class Fade_in : MonoBehaviour
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>().SetTrigger("test");
         GameObject.Find("phone").GetComponent<Animator>().SetTrigger("phone_trigger");
         //Destroy(GameObject.Find("phone"));
+    }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(2);
+        Anims();
     }
 }

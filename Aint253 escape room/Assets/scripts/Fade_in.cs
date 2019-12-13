@@ -13,7 +13,7 @@ public class Fade_in : MonoBehaviour
     {
         BlackImage.canvasRenderer.SetAlpha(1.0f);
         fadeIn();
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().enabled = false;
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().enabled = false;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<mouse_Look>().enabled = false;
         StartCoroutine(wait());
         StartCoroutine(look_back());

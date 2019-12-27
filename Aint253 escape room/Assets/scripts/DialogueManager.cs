@@ -9,11 +9,13 @@ public class DialogueManager : MonoBehaviour
     public Text DialogueText;
     private Queue<string> sentences;
     bool next = false;
-    //public bool MoveActivate = false;
+    private Movement mm;
+    
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        mm = GameObject.Find("Player").GetComponent<Movement>();
     }
     void Update()
     {
@@ -60,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         next = false;
-        //MoveActivate = true;
+        mm.enabled = true;
         animator.SetBool("isOpen", false);
     }
 }

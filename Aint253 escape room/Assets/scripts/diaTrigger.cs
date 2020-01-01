@@ -7,8 +7,11 @@ public class diaTrigger : MonoBehaviour
     public Dialogue dialogue;
     public void Start()
     {
+        if (this.name == "Canvas")
+        {
+            TriggerDialogue();
+        }
         
-        TriggerDialogue();
     }
     public void TriggerDialogue()
     {
@@ -19,6 +22,10 @@ public class diaTrigger : MonoBehaviour
     {
         
         yield return new WaitForSeconds(4);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    }
+    public void Call()
+    {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 }

@@ -7,6 +7,10 @@ public class planetFloat : MonoBehaviour
     public float Hoverforce = 20f;
     private void OnTriggerStay(Collider other)
     {
-        other.attachedRigidbody.AddForce(Vector3.up * Hoverforce, ForceMode.Acceleration);
+        if (other.tag == "Planet")
+        {
+            other.attachedRigidbody.AddForce(Vector3.up * Hoverforce, ForceMode.Acceleration);
+        }
+        
     }
 }

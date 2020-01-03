@@ -7,7 +7,8 @@ public class Fade_in : MonoBehaviour
 {
     public Image BlackImage;
     //public DialogueManager dm;
-    
+    public AudioSource phone;
+    bool phone_gone = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +16,20 @@ public class Fade_in : MonoBehaviour
         fadeIn();
         //GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().enabled = false;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<mouse_Look>().enabled = false;
+        phone = GameObject.Find("phone").GetComponent<AudioSource>();
         StartCoroutine(wait());
         StartCoroutine(look_back());
         
     }
     public void Update()
     {
-        //if (dm.MoveActivate == true)
-        //{
-        //    GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().enabled = true;
-        //}
+        if (phone_gone == false)
+        {
+            if (phone.volume < 0.3)
+            {
+                phone.volume = phone.volume + 0.003f;
+            }
+        }
 
     }
 
@@ -45,6 +50,7 @@ public class Fade_in : MonoBehaviour
     IEnumerator look_back()
     {
         yield return new WaitForSeconds(4);
+        phone_gone = true;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<mouse_Look>().enabled = true;
     }
 }

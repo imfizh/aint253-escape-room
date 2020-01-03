@@ -6,8 +6,6 @@ using TMPro;
 
 public class Planet_zones : MonoBehaviour
 {
-    public Text Merc_text;
-    public Text Nep_text;
     public GameObject water;
     public int Mercury_Value = 423;
     public int Neptune_Value = -225;
@@ -64,7 +62,6 @@ public class Planet_zones : MonoBehaviour
         {
             if (this.name == "Mercury_zone")
             {
-                //Merc_text.text = "changed";
                 Mercury_Value = Mercury_Value + rc.Temperature;
                 mt.text = Mercury_Value.ToString() + "°C";
                 rc.Temperature = 0;
@@ -77,7 +74,6 @@ public class Planet_zones : MonoBehaviour
             }
             if (this.name == "Neptune_zone")
             {
-                //Nep_text.text = "changed";
                 Neptune_Value = Neptune_Value + rc.Temperature;
                 nt.text = Neptune_Value.ToString() + "°C";
                 rc.Temperature = 0;

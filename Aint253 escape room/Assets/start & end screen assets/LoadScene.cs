@@ -9,4 +9,13 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("RoomScene");
     }
+    public void LoadEndScreen()
+    {
+        SceneManager.LoadScene("EndScreen");
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

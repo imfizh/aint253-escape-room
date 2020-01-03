@@ -9,6 +9,7 @@ public class DoorScriptToilet : MonoBehaviour
     public Text Tdoor_text;
     bool TDoor_Open;
     public GameObject door;
+    public AudioSource doorSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class DoorScriptToilet : MonoBehaviour
             Anim.SetBool("T_Open", true);
             Tdoor_text.text = "";
             TDoor_Open = true;
+            doorSound.Play();
             door.GetComponent<BoxCollider>().enabled = false;
         }
 

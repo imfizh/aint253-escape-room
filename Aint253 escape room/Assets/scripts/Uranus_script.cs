@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Uranus_script : MonoBehaviour
 {
     private diaTrigger dt;
     private DialogueManager dm;
+    public Text inter_text;
+    bool inter = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +18,28 @@ public class Uranus_script : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        dt.Call();
+        inter_text.text = "Press E to read";
+        //dt.Call();
     }
     private void OnTriggerExit(Collider other)
     {
-        dm.EndDialogue();
+        inter_text.text = "";
+        if (inter == true)
+        {
+            dm.EndDialogue();
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inter = true;
+            inter_text.text = "";
+            interact();
+        }
+    }
+    public void interact()
+    {
+        dt.Call();
     }
 }

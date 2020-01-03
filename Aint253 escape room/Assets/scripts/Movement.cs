@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     bool isGrounded;
+    public AudioSource footstep;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,13 @@ public class Movement : MonoBehaviour
         zInput = Input.GetAxis("Vertical");
         Vector3 move = transform.right * xInput + transform.forward * zInput;
         cc.Move(move * speed * Time.deltaTime);
+        if (cc.velocity.magnitude > 2 && footstep.isPlaying == false)
+        {
+            //Debug.Log(cc.velocity.magnitude);
+            footstep.Play();
+        }
         velocity.y += gravity * Time.deltaTime;
         cc.Move(velocity * Time.deltaTime);
+        
     }
 }

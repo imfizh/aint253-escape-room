@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
     Animator Anim;
     public Text door_text;
     bool Door_Open;
+    public AudioSource doorSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,7 @@ public class DoorScript : MonoBehaviour
             Anim.SetBool("Open", true);
             door_text.text = "";
             Door_Open = true;
+            doorSound.Play();
         }
         
     }

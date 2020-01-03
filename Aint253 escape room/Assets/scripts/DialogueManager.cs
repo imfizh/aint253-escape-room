@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     bool next = false;
     private Movement mm;
+    public GameObject ui;
     
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void DisplayNextSentence()
     {
+        ui.GetComponent<AudioSource>().Play();
         next = true;
         if (sentences.Count == 0)
         {

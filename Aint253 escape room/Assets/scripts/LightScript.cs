@@ -9,6 +9,7 @@ public class LightScript : MonoBehaviour
     public Text switch_text;
     bool switch_Open;
     private Power power;
+    public AudioSource switchSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class LightScript : MonoBehaviour
         {
             Anim.SetBool("Switch", true);
             switch_text.text = "";
+            switchSound.Play();
             power.PowerOn();
             switch_Open = true;
         }

@@ -82,57 +82,46 @@ public class Raycast : MonoBehaviour
                 //Debug.Log(whatHit.collider.gameObject.name);
                 if (whatHit.transform.name == "button1")
                 {
-                    Debug.Log("1");
                     bs.button1();
                 }
                 if (whatHit.transform.name == "button2")
                 {
-                    Debug.Log("2");
                     bs.button2();
                 }
                 if (whatHit.transform.name == "button3")
                 {
-                    Debug.Log("3");
                     bs.button3();
                 }
                 if (whatHit.transform.name == "button4")
                 {
-                    Debug.Log("4");
                     bs.button4();
                 }
                 if (whatHit.transform.name == "button5")
                 {
-                    Debug.Log("5");
                     bs.button5();
                 }
                 if (whatHit.transform.name == "button6")
                 {
-                    Debug.Log("6");
                     bs.button6();
                 }
                 if (whatHit.transform.name == "button7")
                 {
-                    Debug.Log("7");
                     bs.button7();
                 }
                 if (whatHit.transform.name == "button8")
                 {
-                    Debug.Log("8");
                     bs.button8();
                 }
                 if (whatHit.transform.name == "button9")
                 {
-                    Debug.Log("9");
                     bs.button9();
                 }
                 if (whatHit.transform.name == "Enter")
                 {
-                    Debug.Log("E");
                     bs.Enter();
                 }
                 if (whatHit.transform.name == "Hot_tap")
                 {
-                    Debug.Log("hot tap");
                     hot = GameObject.Find("Hot_tap");
                     
                     hotAnim = hot.GetComponent<Animator>();
@@ -140,7 +129,6 @@ public class Raycast : MonoBehaviour
                 }
                 if (whatHit.transform.name == "Cold_tap")
                 {
-                    Debug.Log("cold tap");
                     cold = GameObject.Find("Cold_tap");
                     
                     coldAnim = cold.GetComponent<Animator>();

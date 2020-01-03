@@ -14,7 +14,7 @@ public class SinkScript : MonoBehaviour
     {
         if (other.tag == "Cup")
         {
-            Debug.Log("hi");
+            
             isCupInSink = true;
         }
     }
@@ -26,7 +26,7 @@ public class SinkScript : MonoBehaviour
     {
         if (other.tag == "Cup")
         {
-            Debug.Log(rc.Temperature);
+            
             isCupInSink = false;
         }
     }

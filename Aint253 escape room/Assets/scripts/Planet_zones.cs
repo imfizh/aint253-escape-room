@@ -30,11 +30,11 @@ public class Planet_zones : MonoBehaviour
     {
         if (Mercury_Value == 427)
         {
-            mt.text = "6";
+            mt.text = "9";
         }
         if (Neptune_Value == -218)
         {
-            nt.text = "9";
+            nt.text = "6";
         }
     }
     private IEnumerator CupFloat(float time)

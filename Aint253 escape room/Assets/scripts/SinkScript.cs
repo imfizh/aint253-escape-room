@@ -5,7 +5,7 @@ using UnityEngine;
 public class SinkScript : MonoBehaviour
 {
     public bool isCupInSink = false;
-    public Raycast rc;
+    Raycast rc;
     private void Start()
     {
         rc = GameObject.Find("Main Camera").GetComponent<Raycast>();
